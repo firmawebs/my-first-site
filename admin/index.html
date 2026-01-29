@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Site Editor</title>
+<style>
+body{font-family:Arial;background:#f2f4f8;padding:20px}
+.box{background:white;max-width:600px;margin:auto;padding:30px;border-radius:10px}
+input,textarea{width:100%;padding:10px;margin:8px 0}
+button{padding:12px 20px;background:#0f172a;color:white;border:none;cursor:pointer}
+h2{text-align:center}
+</style>
+</head>
+
+<body>
+<div class="box">
+<h2>Website Editor</h2>
+
+<input id="siteName" placeholder="Site Name">
+<input id="tagline" placeholder="Tagline">
+<textarea id="welcomeText" placeholder="Welcome text"></textarea>
+
+<h3>Services</h3>
+<textarea id="services" placeholder="One service per line"></textarea>
+
+<h3>About</h3>
+<textarea id="aboutText"></textarea>
+
+<h3>Contact</h3>
+<input id="email" placeholder="Email">
+<input id="phone" placeholder="Phone">
+
+<button onclick="save()">Save Changes</button>
+
+<p style="text-align:center;margin-top:10px;">
+After saving, website updates automatically.
+</p>
+</div>
+
+<script>
+let data;
+
+fetch('../content/site.json')
+.then(r=>r.json())
+.then(d=>{
+ data=d;
+ document.getElementById('siteName').value=d.siteName;
+ document.getElementById('tagline').value=d.tagline;
+ document.getElementById('welcomeText').value=d.welcomeText;
+ document.getElementById('services').value=d.services.join("\n");
+ document.getElementById('aboutText').value=d.aboutText;
+ document.getElementById('email').value=d.email;
+ document.getElementById('phone').value=d.phone;
+});
+
+function save(){
+ alert("Changes saved locally.\nNow commit site.json in GitHub to publish.");
+}
+</script>
+</body>
+</html>
 
