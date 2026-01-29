@@ -1,1 +1,16 @@
+{
+  "siteName": "FirmaWebs",
+  "tagline": "Simple websites for real businesses",
+  "welcomeText": "We create fast, simple and free websites for small businesses.",
+  "services": [
+    "Business websites",
+    "Startup pages",
+    "Landing pages",
+    "Free hosting"
+  ],
+  "aboutText": "FirmaWebs helps new businesses get online fast, free and without complexity.",
+  "email": "contacto@firmawebs.com",
+  "phone": "+34 000 000 000",
+  "logo": "images/uploads/logo.png"
+}
 
