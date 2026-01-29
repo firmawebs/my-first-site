@@ -23,7 +23,7 @@
 
 <section>
 <div class="card">
-<h2>Welcome</h2>
+<p id="welcomeText"></p>
 <p>We create fast, simple and free websites for small businesses.</p>
 <p>No hosting. No contracts. No complexity.</p>
 </div>
@@ -33,5 +33,16 @@
 <p>© 2026 FirmaWebs</p>
 </footer>
 
+<script>
+fetch('content/site.json')
+.then(r=>r.json())
+.then(d=>{
+ document.querySelector("h1").innerText = d.siteName;
+ document.querySelector("header p").innerText = d.tagline;
+ document.getElementById("welcomeText").innerText = d.welcomeText;
+});
+</script>
+
+  
 </body>
 </html>
